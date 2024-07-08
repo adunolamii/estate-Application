@@ -18,9 +18,9 @@ const handleChange = (e) => {
 
     const handleSubmit = async(e) => {
         e.preventDefault()
-        // if (name === "") {
-        //   return toast.error("input can not be empty")
-        // }
+        if (formData === "") {
+          return toast.error("input can not be empty")
+        }
 
      
     //      setFormData({
@@ -31,8 +31,10 @@ const handleChange = (e) => {
        
         try {
             await axios.post("http://localhost:7001/adminMountainProps", formData)
+            toast.success("Added Successfully")
+
         } catch (error) {
-            console.log("error message")
+            toast.error(error.message)
         }
     }
   return (
@@ -56,7 +58,7 @@ const handleChange = (e) => {
             onChange={handleChange}
           />
           
-            <button className=" border-1 w-full rounded-md p-2 font-bold text-white bg-purple-600 hover:to-red-300">
+            <button className=" hover:bg-pink-700  border-1 w-full rounded-md p-2 font-bold text-white bg-purple-600 hover:to-red-300">
           Submit
         </button>
        </form>

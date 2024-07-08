@@ -28,6 +28,16 @@ app.post("/adminBeachProps", async(req, res)=>{
     }
   })
 
+    // READ adminBeachPROPppppp
+app.get("/adminBeachProps", async(req, res)=>{
+  try {
+     const adminBeachProp = await adminBeachPropModel.find(req.body)
+     res.status(200).json(adminBeachProp)
+  } catch (error) {
+      res.status(500).json({error})
+  }
+})
+
  // CREATE adminMountainPropPPPPPP
 app.post("/adminMountainProps", async(req, res)=>{
     try {
@@ -37,6 +47,15 @@ app.post("/adminMountainProps", async(req, res)=>{
         res.status(500).json({error})
     }
   }) 
+ // READ adminMOUNTAINPROPppppp
+  app.get("/adminMountainProps", async(req, res)=>{
+    try {
+       const adminMountainProp = await adminMountainPropModel.find(req.body)
+       res.status(200).json(adminMountainProp)
+    } catch (error) {
+        res.status(500).json({error})
+    }
+  })
 
 
    // CREATE adminVillagePropPPPPPPPPP
@@ -48,6 +67,15 @@ app.post("/adminVillageProps", async(req, res)=>{
         res.status(500).json({error})
     }
   }) 
+ // READ adminVILLAGEPROPppppp
+  app.get("/adminVillageProps", async(req, res)=>{
+  try {
+     const adminVillageProp = await adminVillagePropModel.find(req.body)
+     res.status(200).json(adminVillageProp)
+  } catch (error) {
+      res.status(500).json({error})
+  }
+})
 
 // SERVER CONNECTIONNNNN
 mongoose
