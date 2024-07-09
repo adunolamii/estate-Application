@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import axios from "axios"
 import { toast } from 'react-toastify';
+import { URI } from '../App';
 
 function AdminMountainProp() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const handleChange = (e) => {
     // });
        
         try {
-            await axios.post("http://localhost:7001/adminMountainProps", formData)
+            await axios.post(`${URI}/adminMountainProps`, formData)
             toast.success("Added Successfully")
 
         } catch (error) {

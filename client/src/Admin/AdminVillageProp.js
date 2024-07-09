@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import axios from "axios"
 import { toast } from 'react-toastify';
+import { URI } from '../App';
 
 function AdminVillageProp() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const handleChange = (e) => {
     // });
        
         try {
-            await axios.post("http://localhost:7001/adminVillageProps", formData)
+            await axios.post(`${URI}/adminVillageProps`, formData)
             toast.success("Added Successfully")
 
         } catch (error) {

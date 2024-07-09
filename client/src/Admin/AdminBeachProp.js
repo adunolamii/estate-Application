@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import axios from "axios"
 import { toast } from 'react-toastify';
+import { URI } from '../App';
 
 function AdminBeachProp() {
     const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ function AdminBeachProp() {
         // });
            
             try {
-                await axios.post("http://localhost:7001/adminBeachProps", formData)
+                await axios.post(`${URI}/adminBeachProps`, formData)
                 toast.success("Added Successfully")
 
             } catch (error) {

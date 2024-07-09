@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from "axios";
+import { URI } from '../App';
 
 
 const About = () => {
@@ -13,7 +14,7 @@ const About = () => {
   
       const mountainAll = async () => {
         try {
-          const res = await axios.get("http://localhost:7001/adminMountainProps");
+          const res = await axios.get(`${URI}/adminMountainProps`);
           setMountain(res.data);
         } catch (error) {
           setError(error);

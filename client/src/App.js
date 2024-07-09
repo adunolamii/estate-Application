@@ -14,6 +14,9 @@ import SignUp from './Pages/SignUp';
 import Features from './Pages/Features'
 import Error from './Pages/Error';
 
+export const URI = process.env.
+REACT_APP_SERVER_URI
+
 function App() {
   return (
     <div className="App">

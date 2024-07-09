@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect} from 'react';
 import axios from "axios";
+import { URI } from '../App';
 
 function Home() {
   const [error, setError] = useState([]);
@@ -13,7 +14,7 @@ function Home() {
   
     const beachAll = async () => {
       try {
-        const res = await axios.get("http://localhost:7001/adminBeachProps");
+        const res = await axios.get(`${URI}/adminBeachProps`);
         setBeach(res.data);
       } catch (error) {
         setError(error);
