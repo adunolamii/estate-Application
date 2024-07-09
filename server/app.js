@@ -10,7 +10,9 @@ const app = express()
 // MIDDLE WARE
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
-app.use(cors())
+app.use(cors({
+  origin: "http://locahost:7001/"
+}))
 
 // HOME PAGEEEEEEEEEEEE
 app.get("/", (req, res)=>{
@@ -87,6 +89,7 @@ mongoose
     console.log(error);
   });
 
-app.listen(7001, ()=>{
-    console.log("hey! listen on the port");
+const PORT = process.env.PORT || 7001;
+app.listen(PORT, ()=>{
+    console.log(`hey! listen on the port ${PORT}`);
 })
